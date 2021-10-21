@@ -1,0 +1,9 @@
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\obj\Debug\netcoreapp3.1\DefinexCase.Service.csprojAssemblyReference.cache
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\obj\Debug\netcoreapp3.1\DefinexCase.Service.AssemblyInfoInputs.cache
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\obj\Debug\netcoreapp3.1\DefinexCase.Service.AssemblyInfo.cs
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\obj\Debug\netcoreapp3.1\DefinexCase.Service.csproj.CoreCompileInputs.cache
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\bin\Debug\netcoreapp3.1\DefinexCase.Service.deps.json
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\bin\Debug\netcoreapp3.1\DefinexCase.Service.dll
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\bin\Debug\netcoreapp3.1\DefinexCase.Service.pdb
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\obj\Debug\netcoreapp3.1\DefinexCase.Service.dll
+C:\Users\bahadir.bozkir\source\repos\DefinexCase\DefinexCase.Service\obj\Debug\netcoreapp3.1\DefinexCase.Service.pdb

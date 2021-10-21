@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Products List</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Buy</th>
+        </tr>
+        @foreach (var product in ViewBag.produtList)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td align="center">
+                    <button class="buy" data-id="@product.Id" data-name="@product.Name" data-price="@product.Price">Satın Al</button>
+                </td>
+            </tr>
+        }
+    </table>
+    <div>
+        <input type="button" value="Sepet" onclick="@("window.location.href='" + @Url.Action("Index", "Basket") + "'");" />
+
+    </div>
+    
+
+</body>
+</html>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".buy").click(function (e) {
+            var id = $(this).attr('data-id');
+            var name = $(this).attr('data-name');
+            var price = $(this).attr('data-price');
+
+            var basketItem = { "Id": parseInt(id), "Quantity": 1 };
+            var request = { "Id": 0, "BasketItem": basketItem };
+            $.ajax({
+                type: "POST",
+                url: '/Basket/AddToBasket',     //your action
+                data: request,
+                dataType: 'application/json',
+                success: function (result) {
+                    console.log(result);
+                }
+            })
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Products List</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Buy</th>
+        </tr>
+        @foreach (var item in ViewBag.basket.BasketItems)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+        <tr>
+            <td><button class="pay" data-basketid="@ViewBag.basket.Id" data-banktype="1" data-pmt="1">İş Bankası Kredi Başvurusu</button></td>
+            <td><button class="pay" data-basketid="@ViewBag.basket.Id" data-banktype="2" data-pmt="1">Garanti Kredi Başvurusu</button></td>
+            <td><button class="pay" data-basketid="@ViewBag.basket.Id" data-banktype="3" data-pmt="1">Akbank Kredi Başvurusu</button></td>
+        </tr>
+    </table>
+    <div>
+        <h3>@ViewBag.isSuccess</h3>
+    </div>
+
+</body>
+</html>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".pay").click(function (e) {
+            var id = $(this).attr('data-basketid');
+            var bankType = $(this).attr('data-banktype');
+            var pmt = $(this).attr('data-pmt');
+
+            var request = { "PaymentMethodType": parseInt(pmt), "BankType": parseInt(pmt), "BasketId": parseInt(id) };
+            $.ajax({
+                type: "POST",
+                url: '/Basket/CreditApplication',
+                data: request,
+                dataType: 'application/json',
+                success: function (result) {
+                    console.log(result);
+                }
+            })
+            return false;
+        });
+    });
+</script>
